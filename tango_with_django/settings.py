@@ -60,6 +60,11 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+PASSWORD_HASHERS = (
+'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+)
+
 ROOT_URLCONF = 'tango_with_django.urls'
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
