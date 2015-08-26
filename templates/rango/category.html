@@ -10,7 +10,10 @@
             {% if pages %}
             <ul>
                 {% for page in pages %}
-                <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+                <li>
+                    <a href="{{ page.url }}">{{ page.title }}</a>
+                    <a href="/rango/category/{{category.slug}}/add_page/">Add a Page</a>
+                </li>
                 {% endfor %}
             </ul>
             {% else %}
@@ -19,5 +22,11 @@
         {% else %}
             The specified category {{ category_name }} does not exist!
         {% endif %}
+
+
     </body>
 </html>
+
+
+
+
