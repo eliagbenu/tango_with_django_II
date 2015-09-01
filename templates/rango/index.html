@@ -17,18 +17,19 @@
 
     <h1>Rango says... hello {{ user.username }}!</h1>
     <p>
-    want to <a href="/rango/logout/">Logout</a><br />
+    want to <a href="{% url 'logout' %}">Logout</a><br />
     </p>
 {% else %}
 
     <h1>Rango says... hello world!</h1>
 
 
-    <a href="/rango/register/">Register Here</a>
-
+{% comment %}    <a href="/rango/register/">Register Here</a>{% endcomment %}
+    <a href="{% url 'register' %}">Register Here</a>
         <br/>
 
-    <a href="/rango/login/">Login</a>
+{% comment %}    <a href="/rango/login/">Login</a>{% endcomment %}
+    <a href="{% url 'login' %}">Login</a>
 
 {% endif %}
 
@@ -52,7 +53,9 @@
 
 
 
-    <a href="/rango/about/">About</a><br />
+{% comment %}    <a href="/rango/about/">About</a><br />{% endcomment %}
+    <a href="{% ulr 'about' %}">About</a><br />
+
         <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
 
 </body>
