@@ -214,14 +214,15 @@ def user_login(request):
         # blank dictionary object...
         return render(request, 'rango/login.html', {})
 
+"""
 def register(request):
 
-    """
+
     testing for cookies
     if request.session.test_cookie_worked():
         print ">>>> TEST COOKIE WORKED!"
         request.session.delete_test_cookie()
-    """
+
 
     # A boolean value for telling the template whether the registration was successful.
     # Set to False initially. Code changes value to True when registration succeeds.
@@ -278,3 +279,4 @@ def register(request):
             'rango/register.html',
             {'user_form': user_form, 'profile_form': profile_form, 'registered': registered} )
 
+"""
