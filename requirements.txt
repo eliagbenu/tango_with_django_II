@@ -1,6 +1,7 @@
 CDDB==1.4
 coverage==3.7
 Django==1.7
+django-registration-redux==1.2
 lxml==3.3.6
 MarkupSafe==0.23
 Pillow==2.6.2
