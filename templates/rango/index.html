@@ -1,19 +1,14 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 
 {% load staticfiles %}
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Rango</title>
+{% block title %}
+    Index
+{% endblock %}
 
-     <link rel="stylesheet" href="{% static "css/base.css" %}" /> <!-- CSS -->
-     <script src="{% static "js/jquery.js" %}"></script> <!-- JavaScript -->
+{% block  body_block %}
 
-</head>
-<body>
-
-{% if user.is_authenticated %}
+    {% if user.is_authenticated %}
 
     <h1>Rango says... hello {{ user.username }}!</h1>
 
@@ -29,11 +24,12 @@
 
 
 {% comment %}    <a href="/rango/register/">Register Here</a>{% endcomment %}
-    <a href="{% url 'register' %}">Register Here</a>
-        <br/>
+{% comment %}    <a href="{% url 'register' %}">Register Here</a>{% endcomment %}
+{% comment %}     <a href="{% url 'registration_register' %}">Register here </a>{% endcomment %}
+
 
 {% comment %}    <a href="/rango/login/">Login</a>{% endcomment %}
-    <a href="{% url 'login' %}">Login</a>
+{% comment %}    <a href="{% url 'login' %}">Login</a>{% endcomment %}
 
 {% endif %}
 
@@ -62,5 +58,5 @@
 
         <img src="{% static "images/rango.jpg" %}" alt="Picture of Rango" />
 
-</body>
-</html>
+{% endblock %}
+
