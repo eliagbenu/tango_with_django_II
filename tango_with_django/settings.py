@@ -65,6 +65,8 @@ PASSWORD_HASHERS = (
 'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
 )
 
+LOGIN_URL = '/rango/login/'
+
 ROOT_URLCONF = 'tango_with_django.urls'
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')

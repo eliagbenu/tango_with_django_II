@@ -4,7 +4,9 @@ from rango.models import Category,Page
 from rango.forms import CategoryForm,PageForm
 from rango.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
+from django.contrib.auth import logout
 
 # Create your views here.
 #def index(request):
@@ -19,6 +21,14 @@ def index(request):
     return render(request, 'rango/index.html', context_dict)
 
 
+# Use the login_required() decorator to ensure only those logged in can access the view.
+@login_required
+def user_logout(request):
+    # Since we know the user is logged in, we can now just log them out.
+    logout(request)
+
+    # Take the user back to the homepage.
+    return HttpResponseRedirect('/rango/')
 
 def about(request):
     return HttpResponse("Rango says hey there world!")
@@ -131,6 +141,9 @@ def page(request, page_name_slug):
     return render(request, 'rango/page.html', context_dict)
 
 
+@login_required
+def restricted(request):
+    return HttpResponse("Since you're logged in, you can see this text!")
 
 
 def user_login(request):
